@@ -55,9 +55,30 @@ class Song
     self.all.clear
   end
   
-  def self.create_from_filename
-    self.name.split(" ").collect{|n| n.capitalize}.join(" ")
+  def self.new_from_filename 
+    song = self.new
+    artist_name = self.new
   end
 end
+
+
+ def self.new_from_csv(csv_data)
+    rows = csv_data.split("\n")
+    people = rows.collect do |row|
+      data = row.split(", ")
+      name = data[0]
+      age = data[1]
+      company = data[2]
+ 
+
+
+
+
+
+
+
+
+
+
 
 
