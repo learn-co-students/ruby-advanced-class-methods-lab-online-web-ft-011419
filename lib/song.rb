@@ -1,7 +1,7 @@
 class Song
   attr_accessor :name, :artist_name
   
-  def initialize
+  def initialize(name, artist_name)
     @name = name
     @artist_name = artist_name
   end   
@@ -16,9 +16,22 @@ class Song
     self.class.all << self
   end
 
-  def self.create
-    @all << self.new
-    return self.new
+  def self.create(song)
+   @@all << self.new
+   return song.new
   end 
   
+  def self.new_by_name 
+      
+  end  
+
+  def self.destroy_all
+    self.all.clear
+  end
+  
+  def self.create_from_filename
+    self.name.split(" ").collect{|n| n.capitalize}.join(" ")
+  end
 end
+
+
