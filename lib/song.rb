@@ -1,3 +1,5 @@
+require 'pry'
+
 class Song
   attr_accessor :name, :artist_name
   
@@ -39,14 +41,22 @@ class Song
     @@all.find{|song| song.name == name}
   end  
     
-  def self.find_or_create_by_name(name)
+  def self.find_or_create_by_name(song)
     self.find_by_name
-    self.create_by_name 
+    self.create_by_name
+    @@all.each do |song|
+      if song[name] 
+         song[name] += 1 
+      else
+        song[name] = 1
+      end
+    end  
   end  
- 
- 
-    
-    
+
+  def self.alphabetical
+    return @@all.sort_by{|song| name}
+  end  
+
 
   def self.destroy_all
     self.all.clear
