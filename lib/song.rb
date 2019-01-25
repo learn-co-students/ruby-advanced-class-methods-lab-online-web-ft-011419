@@ -42,15 +42,8 @@ class Song
   end  
     
   def self.find_or_create_by_name(song)
-    self.find_by_name
-    self.create_by_name
-    @@all.each do |song|
-      if song[name] 
-         song[name] += 1 
-      else
-        song[name] = 1
-      end
-    end  
+    self.find_by_name(song) ||
+    self.create_by_name(song)
   end  
 
   def self.alphabetical
