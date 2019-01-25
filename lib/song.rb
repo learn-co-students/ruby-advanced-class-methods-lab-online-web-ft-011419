@@ -22,7 +22,7 @@ class Song
      song
     end
 
-    def Song.create_by_name(new_song)
+    def self.create_by_name(new_song)
      song=self.new
      song.name = new_song
      @@all << song
@@ -46,4 +46,28 @@ class Song
         def self.alphabetical
           @@all.sort_by {|s| s.name        }
         end
+        def self.new_from_filename(data_song)
+          array =data_song.split(/[-.]/)
+          artist = array[0].strip
+          song_name = array[1].strip
+            song = self.new
+            song.name = song_name
+            song.artist_name = artist
+            song
+            end
+
+        def self.create_from_filename(data_song)
+            array = data_song.split(/[-.]/)
+          artist =array[0].strip
+          song_name  = array[1].strip
+          song= self.create
+          song.name = song_name
+          song.artist_name= artist
+          song
+        end
+
+        def self.destroy_all
+          @@all.clear
+        end
+
 end
