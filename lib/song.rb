@@ -2,11 +2,7 @@ require 'pry'
 
 class Song
   attr_accessor :name, :artist_name
-  
-  #def initialize(name, artist_name)
-   # @name = name
-    #@artist_name = artist_name
-  #end   
+
   
   @@all = []
 
@@ -55,20 +51,19 @@ class Song
     self.all.clear
   end
   
-  def self.new_from_filename 
-    song = self.new
-    artist_name = self.new
+  def self.new_from_filename(song)
+    remove_mp3 = song.gsub('.mp3', "").strip
+    split_songs = song.split(" - ")
   end
+  
+  
+  
+  
+  
 end
 
 
- def self.new_from_csv(csv_data)
-    rows = csv_data.split("\n")
-    people = rows.collect do |row|
-      data = row.split(", ")
-      name = data[0]
-      age = data[1]
-      company = data[2]
+ 
  
 
 
