@@ -7,9 +7,9 @@ class Song
   def self.all
     @@all
   end
-def self.create
-  self.new
-end
+  def self.create
+    self.new
+  end
   def save
     self.class.all << self
   end
@@ -18,4 +18,6 @@ end
     new_song.name = name 
   end
   def self.find_by_name
+    
+  end
 end
