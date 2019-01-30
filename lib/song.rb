@@ -43,7 +43,7 @@ class Song
    def self.destroy_all
     self.all.clear
   end
-  def self.new_from_filename(file)
+  def self.new_from_filename(filename)
     things = filename.split(" - ")
     name_artist = things[0]
     song_name = things[1][0..-5]
@@ -52,7 +52,7 @@ class Song
     song.artist_name = name_artist
     return song
   end
-  def self.create_from_filename(file)
+  def self.create_from_filename(filename)
     things = filename.split(" - ")
     name_artist = things[0]
     song_name = things[1][0..-5]
