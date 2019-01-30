@@ -57,6 +57,7 @@ class Song
     name_artist = things[0]
     song_name = things[1][0..-5]
     song = self.create
-    
+    song.name = song_name
+    song.artist_name = name_artist
   end
 end
