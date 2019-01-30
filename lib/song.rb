@@ -56,5 +56,7 @@ class Song
     things = filename.split(" - ")
     name_artist = things[0]
     song_name = things[1][0..-5]
+    song = self.create
     
+  end
 end
